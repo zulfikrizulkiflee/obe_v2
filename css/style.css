@@ -498,6 +498,12 @@ hr{
         background-repeat: no-repeat;
         background-position: 30px 13px;
     }
+
+    .menu_box_list li a.upgrade {
+        background-image: url(../images/promotion.png);
+        background-repeat: no-repeat;
+        background-position: 30px 13px;
+    }
     
     .menu_box_list li a.account_settings:hover {
         background-image: url(../images/user.png);
@@ -1231,8 +1237,7 @@ hr{
         font-family: 'ambleregular';
     }
     
-    .newsletter input[type="submit"],
-.sign_in input[type="submit"],.sign_in input[type="button"] {
+    .newsletter input[type="submit"],.sign_in input[type="submit"],.sign_in input[type="button"] {
         padding: 15px 2.5em;
         color: #FFF;
         font-size: 1em;

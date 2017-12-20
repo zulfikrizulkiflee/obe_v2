@@ -63,9 +63,7 @@
                             <i><img src="images/lock.png" alt=""></i>
                             <input type="password" data-input="pwd" name="regpassword" value="Password" onfocus="if (this.value == 'Password'){this.value = '';}" onblur="if (this.value == '') {this.value = 'Password';}">
                             <i><img class="show-password" src="images/views.png" alt="" style="position: absolute;right: 10px;top:10px;" ></i>
-                        </span> 
-                        <a href="#register-stockist"><input type="button" cid="be_stockist" value="Register As Stockist" style="margin-bottom: 25px;"></a>
-                    </form>
+                        </span> </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#landing1"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
                         <p style="width: 50%:float: right;"> <a href="#upload-image">Proceed <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
@@ -123,6 +121,12 @@
                         </li>
                         <div class="clear"></div>
                     </ul>
+                </div>
+            </div>
+            <div class="column_middle">
+                <div class="sign_in">
+                    <a href="#register-stockist" style="position: relative">
+                        <input type="button" cid="be_stockist" value="Be A Stockist" style="width:100%;"><span style="position: absolute; right: 13px; top:-2px;"><img src="images/cancel.png" id="remove" alt=""></span></a>
                 </div>
             </div>
             <div class="column_middle">
@@ -346,9 +350,7 @@
                 <div class="weather">
                     <h3>Marketing</h3>
                     <div class="temp_list">
-                        <ul class="marketing-list">
-                            
-                        </ul>
+                        <ul class="marketing-list"> </ul>
                     </div>
                 </div>
             </div>
@@ -399,6 +401,7 @@
                         <ul>
                             <li><a href="#edit-profile" class="account_settings"><span>Edit Profile</span></a></li>
                             <li><a href="#account-info" class="events"><span>Account Info<label class="digits" style="background: #4eb75c;">Active</label></span></a></li>
+                            <li data-user="agent"><a href="#be_stockist" class="upgrade"><span>Be A Stockist</span></a></li>
                             <li><a href="#" class="statistics"><span>Logout</span></a></li>
                         </ul>
                     </div>
@@ -423,10 +426,18 @@
             </div>
         </div>
     </div>
-    
     <!-- /page -->
     <script>
-        
+        $('#remove').on('click', function () {
+            if (confirm("You can become a stockist in setting.")) {
+                $(this).parent().parent().animate({
+                    opacity: 'hide', // animate slideUp
+                    right: '200px', // slide left
+                }, 'slow', 'linear', function () {
+                    $(this).parent().parent().remove();
+                });
+            }
+        });
         $('.show-password').each(function () {
             $(this).on('mousedown', function () {
                 var type = $(this).parent().parent().find('input[data-input=pwd]');
@@ -441,15 +452,14 @@
         var productImg = ['brest-garden', 'caen-lemon', 'honey-paris', 'la-rochelle', 'le-havre', 'le-mans', 'lille-vanilla', 'lorraine-lime', 'lyanne-reims', 'lyon-air', 'marseille-lavender', 'nancy-strawberry', 'orly-orange', 'toulouse-apple'];
         $('.product-list').html("");
         for (i = 0; i < productName.length; i++) {
-            var str = '<li> <a href="#"> <table style="width: 100%"> <tr> <td style="width: 35%;padding:0;"><img src="images/fleur/'+productImg[i]+'.jpeg" style="width: 80px;height: 80px;border: 3px solid #50597b;border-radius: 50%;"></td> <td style="width:65%;padding:0 0 0 10px;vertical-align:top;color:#fff;"> <p style="font-size: 1.3em">'+productName[i]+'</p> <p><span class="product-order" style="margin: 0;position: absolute;width: 50%;"> <input type="number" name="order_quantity" style="width:65%;padding:3px 10px;text-align: right;" maxlength="5"> <i>pcs</i> </span> </p> </td> </tr> </table> <div class="clear"></div> </a> </li>';
+            var str = '<li> <a href="#"> <table style="width: 100%"> <tr> <td style="width: 35%;padding:0;"><img src="images/fleur/' + productImg[i] + '.jpeg" style="width: 80px;height: 80px;border: 3px solid #50597b;border-radius: 50%;"></td> <td style="width:65%;padding:0 0 0 10px;vertical-align:top;color:#fff;"> <p style="font-size: 1.3em">' + productName[i] + '</p> <p><span class="product-order" style="margin: 0;position: absolute;width: 50%;"> <input type="number" name="order_quantity" style="width:65%;padding:3px 10px;text-align: right;" maxlength="5"> <i>pcs</i> </span> </p> </td> </tr> </table> <div class="clear"></div> </a> </li>';
             $('.product-list').append(str);
         }
-        
         var marketingName = ['Tester', 'Flyers', 'Poster', 'Standee', 'Rolls Up', 'T-stand'];
         var marketingImg = ['tester', 'flyers', 'poster', 'standee', 'rolls-up-t-stand', 'rolls-up-t-stand'];
         $('.marketing-list').html("");
         for (i = 0; i < marketingName.length; i++) {
-            var str = '<li> <a href="#"> <table style="width: 100%"> <tr> <td style="width: 35%;padding:0;"><img src="images/marketing/'+marketingImg[i]+'.jpeg" style="width: 80px;height: 80px;border: 3px solid #50597b;border-radius: 50%;"></td> <td style="width:65%;padding:0 0 0 10px;vertical-align:top;color:#fff;"> <p style="font-size: 1.3em">'+marketingName[i]+'</p> <p><span class="marketing-order" style="margin: 0;position: absolute;width: 50%;"> <input type="number" name="order_quantity" style="width:65%;padding:3px 10px;text-align: right;" maxlength="5"> <i>pcs</i> </span> </p> </td> </tr> </table> <div class="clear"></div> </a> </li>';
+            var str = '<li> <a href="#"> <table style="width: 100%"> <tr> <td style="width: 35%;padding:0;"><img src="images/marketing/' + marketingImg[i] + '.jpeg" style="width: 80px;height: 80px;border: 3px solid #50597b;border-radius: 50%;"></td> <td style="width:65%;padding:0 0 0 10px;vertical-align:top;color:#fff;"> <p style="font-size: 1.3em">' + marketingName[i] + '</p> <p><span class="marketing-order" style="margin: 0;position: absolute;width: 50%;"> <input type="number" name="order_quantity" style="width:65%;padding:3px 10px;text-align: right;" maxlength="5"> <i>pcs</i> </span> </p> </td> </tr> </table> <div class="clear"></div> </a> </li>';
             $('.marketing-list').append(str);
         }
     </script>
