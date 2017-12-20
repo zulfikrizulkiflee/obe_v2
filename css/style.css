@@ -1224,7 +1224,8 @@ hr{
     
     input[type="text"],
     input[type="password"],
-    input[type="number"] {
+    input[type="number"],
+    textarea{
         padding: 10px;
         color: #FFF;
         font-size: 1em;
@@ -1235,6 +1236,12 @@ hr{
         width: 75%;
         -webkit-apperance: none;
         font-family: 'ambleregular';
+    }
+
+    textarea{
+        height: 3em;
+        width: 90% !important;
+        resize: none;
     }
     
     .newsletter input[type="submit"],.sign_in input[type="submit"],.sign_in input[type="button"] {

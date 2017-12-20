@@ -144,13 +144,30 @@
                     </div>
                 </div>
             </div>
-            <div class="column_middle">
+            <div class="column_middle" data-user="stockist">
                 <div class="weather">
-                    <h3 style="position: relative;">Recent Orders<span style="position: absolute; padding: 12px; right: 0; top:0;"><a href="#add-order"> <img src="images/plus.png" alt=""> </a></span></h3>
+                    <h3 style="position: relative;">Incoming Orders</h3>
                     <div class="temp_list">
-                        <ul>
+                        <ul class="incoming-order">
                             <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
                                 <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                        </ul>
+                        <ul>
+                            <li style="text-align: center"><a href="#" style="padding: 10px;">Click to view all</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column_middle" data-user="agent">
+                <div class="weather">
+                    <h3 style="position: relative;">Outgoing Orders<span style="position: absolute; padding: 12px; right: 0; top:0;"><a href="#add-order"> <img src="images/plus.png" alt=""> </a></span></h3>
+                    <div class="temp_list">
+                        <ul class="outgoing-order">
+                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                        </ul>
+                        <ul>
+                            <li style="text-align: center"><a href="#" style="padding: 10px;">Click to view all</a></li>
                         </ul>
                     </div>
                 </div>
@@ -194,7 +211,7 @@
                 <div class="sign_in">
                     <h3>Upload Image</h3>
                     <div class="profile_picture">
-                        <a><img src="images/woman.png" alt="" style="width:150px;height:150px"></a>
+                        <a><img src="images/man.png" alt="" style="width:150px;height:150px"></a>
                     </div>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;line-height: 32px;"> <a href="#login"> Skip</a> </p>
@@ -212,7 +229,7 @@
                 <div class="sign_in">
                     <h3>Update Image</h3>
                     <div class="profile_picture">
-                        <a><img src="images/woman.png" alt="" style="width:150px;height:150px"></a>
+                        <a><img src="images/man.png" alt="" style="width:150px;height:150px"></a>
                     </div>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
@@ -330,7 +347,7 @@
                                 </tr>
                             </table>
                         </span> <span>
-                        <i><img src="images/order.png" alt=""></i><input type="text" name="order_desc" value="Order Description" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Order Description';}">
+                        <textarea name="order_desc" onfocus="if (this.value == 'Name, address, phone number and note') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Name, address, phone number and note';}">Name, address, phone number and note</textarea>
                         </span></form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
@@ -429,7 +446,7 @@
     <!-- /page -->
     <script>
         $('#remove').on('click', function () {
-            if (confirm("You can become a stockist in setting.")) {
+            if (confirm("Are you sure to remove?\nSubscribe as stockist can be find in setting.")) {
                 $(this).parent().parent().animate({
                     opacity: 'hide', // animate slideUp
                     right: '200px', // slide left
