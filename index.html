@@ -146,14 +146,14 @@
             </div>
             <div class="column_middle" data-user="stockist">
                 <div class="weather">
-                    <h3 style="position: relative;">Incoming Orders</h3>
+                    <h3 style="position: relative;background: #ec3d68">Incoming Orders</h3>
                     <div class="temp_list">
                         <ul class="incoming-order">
                             <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
                                 <label class="digits"> agent_a </label><div class="clear"></div></a></li>
                         </ul>
                         <ul>
-                            <li style="text-align: center"><a href="#" style="padding: 10px;">Click to view all</a></li>
+                            <li style="text-align: center"><a href="#incoming-order" style="padding: 10px;">Click to view all</a></li>
                         </ul>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                                 <label class="digits"> agent_a </label><div class="clear"></div></a></li>
                         </ul>
                         <ul>
-                            <li style="text-align: center"><a href="#" style="padding: 10px;">Click to view all</a></li>
+                            <li style="text-align: center"><a href="#outgoing-order" style="padding: 10px;">Click to view all</a></li>
                         </ul>
                     </div>
                 </div>
@@ -259,8 +259,9 @@
                 <div class="weather">
                     <div class="temp_list">
                         <ul>
-                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
-                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                            <li><a href="#" style="position: relative;"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div><div id="box"></div></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -287,8 +288,9 @@
                 <div class="weather">
                     <div class="temp_list">
                         <ul>
-                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
-                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                            <li><a href="#" style="position: relative;"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div><div id="box"></div></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -315,8 +317,9 @@
                 <div class="weather">
                     <div class="temp_list">
                         <ul>
-                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
-                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                            <li><a href="#" style="position: relative;"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div><div id="box"></div></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -397,10 +400,44 @@
         <div class="wrap">
             <div class="column_left">
                 <div class="menu_box">
-                    <h3 style="position: relative;background: #ab1149;"><span style="position: absolute; padding: 15px; left: 0; top:0;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>All Agents</h3>
+                    <h3 style="position: relative;background: #35aadc;"><span style="position: absolute; padding: 15px; left: 0; top:0;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>All Agents</h3>
                     <div class="menu_box_list">
                         <ul>
                             <li><a href="#">Agent A<label class="digits" style="background: #4eb75c;">Active</label></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of incoming order page -->
+    <div data-role="page" class="main" id="incoming-order" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_left">
+                <div class="menu_box">
+                    <h3 style="position: relative;background: #ec3d68;"><span style="position: absolute; padding: 15px; left: 0; top:0;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>Incoming Orders</h3>
+                    <div class="temp_list">
+                        <ul class="incoming-order">
+                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of outgoing order page -->
+    <div data-role="page" class="main" id="outgoing-order" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_left">
+                <div class="menu_box">
+                    <h3 style="position: relative;background: #cc324b;"><span style="position: absolute; padding: 15px; left: 0; top:0;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>Outgoing Orders</h3>
+                    <div class="temp_list">
+                        <ul class="incoming-order">
+                            <li><a href="#"><span class="day_name">29/06/17</span>&nbsp; 10.45am 
+                                <label class="digits"> agent_a </label><div class="clear"></div></a></li>
                         </ul>
                     </div>
                 </div>
@@ -445,22 +482,22 @@
     </div>
     <!-- /page -->
     <script>
-        $('#remove').on('click', function () {
+        $('#remove').on('click', function() {
             if (confirm("Are you sure to remove?\nSubscribe as stockist can be find in setting.")) {
                 $(this).parent().parent().animate({
                     opacity: 'hide', // animate slideUp
                     right: '200px', // slide left
-                }, 'slow', 'linear', function () {
+                }, 'slow', 'linear', function() {
                     $(this).parent().parent().remove();
                 });
             }
         });
-        $('.show-password').each(function () {
-            $(this).on('mousedown', function () {
+        $('.show-password').each(function() {
+            $(this).on('mousedown', function() {
                 var type = $(this).parent().parent().find('input[data-input=pwd]');
                 type.prop('type', "text");
             });
-            $(this).on('mouseup', function () {
+            $(this).on('mouseup', function() {
                 var type = $(this).parent().parent().find('input[data-input=pwd]');
                 type.prop('type', "password");
             });
