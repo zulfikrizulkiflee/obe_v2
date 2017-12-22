@@ -1671,26 +1671,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             #box-incoming {
                 border-left: 20px solid transparent;
-                border-right: 20px solid green;
-                border-bottom: 20px solid transparent;
+                border-right: 20px solid #ec3d68;
+                border-top: 20px solid transparent;
                 height: 0;
                 width: 0;
                 position: absolute;
                 right: 0px;
                 z-index: 2;
-                top: 0;
+                bottom: 0;
                 right: 0;
             }
             
             #box-outgoing {
                 border-left: 20px solid transparent;
-                border-right: 20px solid green;
-                border-bottom: 20px solid transparent;
+                border-right: 20px solid #11a8ab;
+                border-top: 20px solid transparent;
                 height: 0;
                 width: 0;
                 position: absolute;
                 right: 0px;
                 z-index: 2;
-                top: 0;
+                bottom: 0;
                 right: 0;
             }
